@@ -1,0 +1,94 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 11 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+If we want to pick 2 socks from a supply that we have of black and white socks we could represent that as C(2n,2)\\ which is also equal to picking two socks from the black pile (n,2)\\
+and picking a two socks from the white pile (n,2)\\
+or 2(n,2) then plus the option of picking one white and one black sock $n^2$ \\
+% #2
+\item {\bf Question 2} \\
+P(n,k)C(n-k,r-k) = n!/(n-k)!*(n-k)!/((r-k)!*((n-k)-(r-k))!) \\
+= n!/(r-k)!*(n-r)! = n!/r!*(r-k)! + r!/(r-k)! =  C(n,r)P(r,k) \\
+For this formula a argument where both the lhs and rhs would count would be in you wanted to pick a pascal triangle section where order matters.
+
+% #3
+\item {\bf Question 3} \\
+a) \\
+Since we have 2 of each then we have 1 way to pick those ten cookies \\
+plus (6+5-1, 5-1) = (10,4) ways to pick the rest of the cookies. So 10 + 210 = 220 ways to pick the cookies.\\
+b) \\
+Since we have at least 4 oatmeal cookies we have 4 ways to do that plus the ways to pick the rest of the 12 cookies which is (12+5-1,5-1) = (16,4) using the stars and bars method. Then to make sure we do not have more than 4 chocolate chip cookies by subtracting the amount of options that would have more than 4 chocolate chip cookies which is 8. 
+So there are 4 + 1820-8 = 1824 ways to choose the cookies. \\
+
+% #4
+\item {\bf Question 4} \\
+So first we choose bananas which would be C(16,5) then we would have to choose which people the oranges go to C(11,3) then we need to choose apples C(8,8) so there are C(16,5) * C(11,3) * C(8,8) = 4368 * 165 * 1 = 720720 ways \\
+% #5
+\item {\bf Question 5} \\
+a)\\
+Since there are 30 objects and we need five distinguishable committees we can write it like this 30!/(5!5!5!3!3!3!3!3!) ways \\
+b)\\
+ since they all now indistinguishable we take it times an another 3! for the 3 groups of 5 and 5! for the 5 groups of 3. Since we know a size of 5 and a size of 3 are distinguishable. so 30!/(5!5!5!)3!(3!3!3!3!3!)5! ways\\
+c)\\
+Since three 5 member groups and two 3 member groups do the same job we must take the 5 times another 3! and the two times 2! because they indistinguishable in task but distinguishable in size then we leave the no task alone. So 
+30!/(5!5!5!)3!(3!3!)2!(3!3!3!) \\
+% #6
+\item {\bf Question 6} \\
+a) \\
+Since we are putting distinct books into identical boxes we use the stars and bars method. (6+6-1, 6-1) = (11,5) = 462 ways \\
+b) \\
+If the books are identical then the order does not matter so if you were just to write it out you would have \\
+6-0-0-0-0-0 \\
+5-1-0-0-0-0 \\
+4-2-0-0-0-0 \\
+4-1-1-0-0-0 \\
+3-3-0-0-0-0 \\
+3-2-1-0-0-0 \\
+3-1-1-1-0-0 \\
+2-2-2-0-0-0 \\
+2-2-1-1-0-0 \\
+2-1-1-1-1-0 \\
+1-1-1-1-1-1 \\
+So 11 ways. \\
+% #7
+\item {\bf Question 7} \\
+a) \\
+If we have 5 distinguishable shelves and 12 indistinguishable books then we can use the bars and stars method and we would have 
+(12+5-1, 5-1) = (16, 4) = 1820 ways \\
+b) \\
+If we have 5 distinguishable shelves 12 distinguishable books then using the bars and stars method we determine where the books would be placed but since the books are now distinguishable we need to also determine their order so we have 1820 * 12! ways. \\
+% #8
+\item {\bf Question 8} \\
+The degree of a vertice is the number of edges attached to it so G has at most 5+4+3+3+2+1 = 18 edges if none of the edges share a vertice. But since we know an edge has two connections the number of edges in this graph is most likely 18/2 = 9 \\
+% #9
+\item {\bf Question 9} \\
+Assume that if you add an edge to a acyclic graph it will not be a cycle. So if we have a acyclic graph G then $|E|$ greater than or equal to $|V| - 1$ where E is the number of edges and v is the number of vertices if we add an edge then that increases the number of edges but the number of vertices stays the same so it is no longer acyclic which by definition means it now has a cycle and that is a contradiction. \\
+
+\end{enumerate}
+\end{document}

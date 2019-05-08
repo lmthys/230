@@ -1,0 +1,142 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 6 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+a) \\
+Because f is a total function that means there is a mapping from every element in $ B \rightarrow C$ so it is also a one to one function.\\
+B) \\
+if $A = \{a\} , B = \{b,c\}, C = \{d,e,f\}$\\
+and $(f \circ g)(d) = a \land (e) = a \land (f) = a$\\
+and $ g(a) = b $ and $f(b) = d, f(c) = e $ \\
+So f is not an onto function. \\ 
+
+	
+	
+	
+	
+
+% #2
+\item {\bf Question 2} \\
+a) \\
+This relation is reflexive when x is a real number greater than zero and anti-reflexive when  less than zero, because \\
+when $x \geq 0$ then $(x,x) \in R1 \biconditional 2x \geq 0$ \\
+else when $x < 0$ then $(x,x) \in R1 \ne 2x \geq 0$ \\
+This relation is transitive because \\
+$ (x,y) \in R1 \land (y,z) \in R1 \rightarrow (x,z) \in R1$ \\
+$ xy \geq 0 \land yz \geq 0$ which means x,y, and z are all positive real numbers or 0 so, $yz \geq 0$ for all Real Numbers \\
+This relation is also symmetric because \\
+if $ xy \geq 0 $ then because of multiplication rules $ yx \geq 0 $ \\
+b) \\
+This relation is anti-reflexive because \\
+$ (x,x) \notin R2 \rightarrow x \ne 2x$ \\
+This relation is not transitive because \\
+$ (x,y) \in R2 \land (y,z) \in R2$ does not imply $(x,y) \in R2$\\
+$ x = 2y \land y = 2z \rightarrow x = 4z \ne x = 2z $ \\
+This relation is anti-symmetric because \\
+$ x = 2y \ne y = 2x $ and $ x = 2y \land y = 2x $ only implies $ y = x $ \\
+when $ y = 0 \land x = 0 $ so for all other cases it is not true so because of the way an implies work the statement is true. \\ 
+
+
+% #3
+\item {\bf Question 3} \\
+a)\\
+R3 is reflexive because \\
+$ (x,x) \in R3 \rightarrow x/x = 1, \forall x \in \mathbb{R} +$ and $ 1 \in \mathbb{Z} $ \\
+R3 is anti- symmetric because \\
+$ (x,y) \in R3 \land (y,x) \in R3 \rightarrow y = x $ \\
+$ x/y \in \mathbb{Z} \land y/x \in \mathbb{Z}$\\ 
+Since $ x/y = \mathbb{Z} => x = y\mathbb{Z} => 1/(\mathbb{Z}) = y/x$ \\
+then $ 1/(\mathbb{Z}) \in \mathbb{Z} $ if $ x = y$ \\
+R3 is transitive because \\
+$ x/y \in \mathbb{Z} \land y/z \in \mathbb{Z}$ then $y = x/(\mathbb{Z})$\\
+$ (x/(\mathbb{Z})) / z = \mathbb{Z} => x/(\mathbb{Z})(z) = \mathbb{Z}$ \\
+$ x/z = 2(\mathbb{Z})$ since 2 is an even number $x/z \in \mathbb{Z}$\\
+So R3 is a strict partial order. \\
+b) \\
+R4 is reflexive because \\
+$ (x,x) \in R4 \biconditional x - x \in \mathbb{Z} $ and $ x - x = 0 $ for all $\mathbb{R}$ and $0 \in \mathbb{Z}$ \\
+R4 is symmetric because \\
+$ (x,y) \in R4 \rightarrow (y,x) \in R4 $ because if $ x - y \in \mathbb{Z} $ then $ y - x $ is the same number with the opposite sign but still an integer. \\
+R4 is transitive because \\
+$ (x - y) \in \mathbb{Z} \land (y - z) \in \mathbb{Z} = (x - (z+ \mathbb{Z}) = \mathbb{Z} = x - z = 0$ \\
+$ 0 \in \mathbb{Z}$ \\ 
+So R4 is an equivalence \\
+R4 equivalence class for $\pi$ = [$\pi - 1$, $\pi - 2$, $\pi - 3$, ... ] \\
+R4 equivalence class for $2$ = [$1$, $0$, $-1$, ...] \\
+
+
+
+% #4
+\item {\bf Question 4} \\
+A) \\
+R5 is reflexive because \\
+$((a,a), (a,a) ) \in R5$ => $a/a = a/a$ 
+R5 is symmetric because \\
+$((a,b) , (e,d)) \in R5 \rightarrow((b,a),(d,e)))  $\\
+$=> a/b = e/d$ \\
+$=>  ad = be $ \\
+$=>  d/e = b/a $ \\
+$=>$ because '=' is symmetric $ b/a = d/e $ \\
+R5 is transitive because \\
+$((a,b), (c,d)) \land ((b,e), (d,f)) \in R5 \rightarrow ((a,e),(c,f)) \in R5$\\
+$ a/b = c/d \land b/e = d/f $ \\
+$=>  b = de/f $ \\
+$=>  a/(de/f) = c/d $ \\
+$=>  af/de = c/d $ \\
+$=>  af(d) = c(de) $ \\
+$=>  c = af/e $ \\
+$=>  ce = af $ \\
+$=>  c/f = a/e $ \\
+$=>$ because '=' is symmetric $ a/e = c/f $ \\
+B) \\
+$f(a,b) = a/b$ \\
+C)\\
+(1,1) = [(1,1) , (2,2) , (3,3), ...$(\mathbb{Z}+ / \mathbb{Z}+)$] \\
+D) \\
+There is an equivalence class for every positive integer $n$, that is resulting from $a/b$ then for every $n$, there is a $c/d$ that equals $a/b$ \\
+So for example for when $a/b = 1$ then $n = 1$ and the equivalence class contains every $c/d = 1$ \\
+
+
+% #5 
+\item {\bf{Question 5}} \\
+reflexive: \\
+$(f,f) \rightarrow F(0) = f(0) \land f(1) = f(1) $ \\
+symmetric: \\
+$ (f,g) \rightarrow (g,f) $ \\
+$ f(0) = g(0) \land f(1) = g(1) $ because '=' is symmetric \\
+$ g(0) = f(0) \land g(1) = f(1) $ \\
+transitive: \\
+if $ (f(0) = g(0) \land f(1) = g(1)) \land (g(0) = h(0) \land g(1) = h(1) $ \\
+then because '=' is transitive $f(0) = h(0) \land f(1) = h(1) $ \\
+so this relation is a equivalence relation. \\
+where $f(n) = n$ then the equivalence class is  $[f] = [0,1]$ \\   
+
+
+\end{enumerate}
+\end{document}

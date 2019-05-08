@@ -1,0 +1,155 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 2 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+	universe: All students in class \\
+	$S(x)$: x is a sophomore. \\
+	$H(x)$: x has done their homework. \\
+	a) $\forall xS(x)$ \\
+	b) $\exists xH(x)$ \\
+	universe: all ISU students. \\ 
+	$C(x)$: x is a student in class \\
+	a) $\forall x[C(x) \rightarrow S(x)]$ \\
+	b) $\exists x[C(x) \land H(x)]$ \\
+	
+
+% #2
+\item {\bf Question 2} \\
+Let $P(x)$ be "x is true when lights are off" \\
+and let $Q(x)$ be "x is true when lights are on" \\
+There will never be a world where the lights are on and off. \\
+But there may be a world where the lights are on and another world where the lights are off. \\
+Therefore $\forall x(P(x) \biconditional Q(x)) \not\equiv$ \\
+$\forall xP(x) \biconditional  \forall xQ(x)$ 
+
+
+% #3
+\item {\bf Question 3} \\
+a) $\exists x \exists y \forall z[(x \ne y \land S(x) \land S(y)) \land (F(z) \rightarrow (A(z,y) \lor A(z,x)))]$ \\
+b) $\forall x \exists y \exists z[F(x) \rightarrow ((S(y) \land A(x,y)) \land (S(z) \land A(x,z)))]$\\
+
+
+% #4
+\item {\bf Question 4} \\
+Assuming $\exists x \land \exists y \land y \ne x$ \\
+a) $ x = F(x,y) \lor F(y,x) $ \\
+b) $ P1 = \forall y(F(x,y)) $ \\
+c) $ P = F(y,x)$ \\
+d) $ P3 = F(P1, x)$\\
+
+% #5
+\item {\bf{Question 5}} \\
+a) universe: a student in class \\
+$L(x)$: x has visited London \\
+$B(x)$: x has visited bucking ham palace \\
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+      \exists xL(x) && \textrm{Hyp 1} \\
+  	  \forall x[L(x) \rightarrow B(x)] && \textrm{Hyp 2} \\
+      L(j) \rightarrow B(j) \textrm{(for any j)} && \textrm{Universal Instantiation} \\
+      L(j) \textrm{(for any j)} && \textrm{Universal Instantiation} \\
+      B(j) &&  \textrm{Modus Ponens (4), (5)} \\
+      \exists xB(x) && \textrm{Existential Generalization} 
+\end{align}
+
+b)
+universe: all movies \\
+$P(x)$: x is a popular movie. \\ 
+$I(x)$: x is a movie made in Iowa. \\
+$A(x)$: x is an action movie. \\
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+      \forall x[A(x) \rightarrow P(x)] && \textrm{Hyp 1} \\
+  	  \exists x [A(x) \land I(x)] && \textrm{Hyp 2} \\
+      A(b) \rightarrow P(b) \textrm{(for all b)} && \textrm{Universal Instantiation} \\
+      A(b) \land I(b) \textrm{(for all b)} && \textrm{Universal Instantiation} \\
+      A(b) \textrm{(for all b)} &&  \textrm{Simplification(12)} \\
+      P(b) \textrm{(for all b)} && \textrm{Modus ponens, (13) , (11)} \\ 
+      I(b) \textrm{(for all b)} && \textrm{Simplification (12)} \\
+      P(b) \land I(b) \textrm{(for all b)} && \textrm{Conjuction(14) , (15)} \\
+      \exists x[P(x) \land I(x)] && \textrm{Existential Generalization} 
+\end{align}
+
+
+% #6 
+\item {\bf{Question 6}} \\
+a) Universe: All People \\
+$H(x)$: x lives in Hawaii \\
+$O(x)$: x lives close to the ocean \\
+$S(x)$: x knows how to surf \\
+$B(x)$: x owns a surf board \\
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+      \forall x[H(x) \rightarrow O(x)] && \textrm{Hyp 1} \\
+  	  \forall x [\lnot S(x) \rightarrow \lnot O(x)] && \textrm{Hyp 2} \\
+      \forall x [S(x) \rightarrow B(x)] && \textrm{Hyp 3} \\
+      H(a) \rightarrow O(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      \lnot S(a) \rightarrow \lnot O(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      S(a) \rightarrow B(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      O(b) \rightarrow S(a) \textrm{(for all a)} &&  \textrm{Contrapositive (23)} \\
+      H(a) = True \textrm{(for all a)} && \textrm{Assumption that H(a) is true} \\ 
+      O(a) \textrm{(for all a)} && \textrm{Modus Ponens,(22), (26)} \\
+      S(a) \textrm{(for all a)} && \textrm{Modus Ponens,(25), (27)} \\
+      B(a) \textrm{(for all a)} && \textrm{Modus Ponens,(24), (28)} \\
+      H(a) \rightarrow B(a) \textrm{(for all a)}  && \textrm{26} \\
+      \forall x[H(x) \rightarrow B(x)] && \textrm{Existential Generalization} 
+\end{align} \\
+b) 
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+	  \forall x[P(x) \rightarrow Q(x)] && \textrm{Hyp 1} \\
+  	  \forall x [Q(x) \rightarrow R(x)] && \textrm{Hyp 2} \\
+      P(a) \rightarrow Q(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      Q(a) \rightarrow R(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      P(a) = True \textrm{(for all a)} && \textrm{Assumption that P(a) is true} \\ 
+      Q(a) \textrm{(for all a)} && \textrm{Modus Ponens,(35), (37)} \\
+      R(a) \textrm{(for all a)} && \textrm{Modus Ponens,(36), (28)} \\
+      P(a) \rightarrow Q(a) \textrm{(for all a)}  && \textrm{37} \\
+      \forall x[P(x) \rightarrow Q(x)] && \textrm{Existential Generalization} 
+\end{align} \\
+c)	\\
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+      \forall x[H(x) \rightarrow O(x)] && \textrm{Hyp 1} \\
+  	  \forall x [\lnot S(x) \rightarrow \lnot O(x)] && \textrm{Hyp 2} \\
+      \forall x [S(x) \rightarrow B(x)] && \textrm{Hyp 3} \\
+      H(a) \rightarrow O(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      \lnot S(a) \rightarrow \lnot O(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      S(a) \rightarrow B(a) \textrm{(for all a)} && \textrm{Universal Instantiation} \\
+      O(a) \rightarrow S(a) \textrm{(for all a)} &&  \textrm{Contrapositive (23)} \\
+      H(a) \rightarrow S(a) \textrm{(for all a)} && \textrm{universal transitivity,(46),(49)} \\ 
+      H(a) \rightarrow B(a) \textrm{(for all a)} && \textrm{universal transitivity,(48),(50)} \\
+      \forall x[H(x) \rightarrow B(x)] && \textrm{Existential Generalization} 
+\end{align} \\
+Yes, my proof is shorter. 
+
+
+
+\end{enumerate}
+\end{document}

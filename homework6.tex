@@ -1,0 +1,113 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 6 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+a) f(n) = \{n
+			3n\\
+b)  
+
+	
+	
+	
+	
+
+% #2
+\item {\bf Question 2} \\
+a) \\
+If we were to enumerate this it could look like this,\\
+$.\overline{5},.5, .55 , .555 ...$\\
+$5.\overline{5},5.5, 5.55, 5.555...$\\
+$55.\overline{5},55.5,55.55,55.555...$\\
+The integers in front of the decimal continues unbounded. \\
+So numbers with only 5's could be countable, because the diagonals are finite. \\
+we can count this enumeration by starting with $.\overline{5}$ \\
+Then $5.\overline{5}$ and $.5$, then $55.\overline{5}$, and  $5.5$, and $.55$\\
+and so on.
+b) \\
+A way to enumerate the set of reals consisting of 1's, 3's, and 5's \\
+Could look like this \\
+$-5.\overline{5},-5.5, -3.\overline{3},-3.3, -1.\overline{1}, -1.1$ ... \\
+  $ 0.\overline{1},$  $0.1,$   $0.\overline{3},$  $0.3,$  $0.\overline{5},$  $0.5$... \\
+$1.\overline{1}, 1.1, 3.\overline{3}, 3.3, 5.\overline{5}, 5.5$... \\
+And the number before the decimal point continues on unbounded. \\
+This is not countable, but let us assume it is countable and the enumerated list is a set A.\\
+And to make it more simple we can use variables to represent the digits in the enumeration \\
+Then we could have a number $z \in A$ where \\
+$z = $
+\[
+\left \{
+  \begin{tabular}{ccc}
+  $1$ & if a digit i & $\in [3,5]$ \\
+  $3$& if a digit i & $\in [1,5]$ \\
+  $5$ & if a digit i  & $\in [1,3]$ \\
+  \end{tabular}
+\right \}
+\]
+and this number does not exist in set A. 
+So this is a contradiction. \\
+
+
+
+% #3
+\item {\bf Question 3} \\
+Lets assume that the set of all functions is F. \\
+Lets also assume that it is countable. \\
+Then, \\
+
+
+% #4
+\item {\bf Question 4} \\
+For example sake lets us assume the two sets are A and B \\
+Then the enumeration of $A \cup B$ could look like this \\
+a1,b1,a2,b2,a3,b3, ... \\
+If we enumerate it across positive integers, it could look like this \\
+(1,a1) , (1,b1) \\
+(2,a2) , (2,b2) \\
+(3,a3) , (3,b3) \\
+And this continues infinitely \\
+Then since the rows are finite we could count this set like \\
+(1,a1), (1,b1) then (2,a2), (2,b2) and so on \\
+So it is countable. \\
+
+
+% #5 
+\item {\bf Question 5} \\
+$ \Sigma = \{0,1,2,3,4,5,6,7,8,9,/,\}$ \\
+if we were to show lengths of all the strings created with this alphabet\\
+it could look like this  \\
+Lengths of 0: $\epsilon$ (null set) \\
+Lengths of 1: 0,1,2,3,4,5,6,7,8,9,/ \\
+Lengths of 2: 00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 0/ and so on\\
+Then because 0,1,2 and so on is countable we can count the finite strings by there lengths \\
+Using this to prove that positive rational numbers, we could replace the alphabet given with the set of positive rational numbers. Then we could do the same thing and count the numbers by their string lengths. \\
+
+
+
+\end{enumerate}
+\end{document}

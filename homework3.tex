@@ -1,0 +1,120 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 3 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+	Assume $p$ is an odd integer.\\
+	$\Rrightarrow p = 2k+1$ for some $k  \epsilon  \mathbb{N}$ \\
+	$\Rrightarrow p^3 = (2k+1)^3 = 8k^3  + 8k^2 + 4k +1 = 2(4k^3 + 4k^2 + 2k)+ 1$ \\
+	$\Rrightarrow 4k^3 + 4k^2 + 2k$ is an integer.\\
+	$\Rrightarrow p^3$ is an odd integer. \\
+	
+	
+	
+
+% #2
+\item {\bf Question 2} \\
+Since $x$ and $y$ are non-zero rational numbers, \\
+let $ x = a/b $ and $y = c/d$ therefore $xy = ac/bd$ \\
+Then if we divide this by $z$ we have $ac/bdz$ \\
+Lets assume that the product of $ac/bdz$ is a rational number so, \\
+$ac/bdz = e/f$ \\
+$\Rrightarrow ac = ebdz/f \Rrightarrow acf = ebdz \Rrightarrow z = acf/ebd$\\
+Because $acf/ebd$ is a rational number according to the definition. \\
+This is a contradiction because $z$ is irrational. \\
+Therefore $xy/z$ is irrational.\\
+No, it is not direct because contradiction was used. \\
+% #3
+\item {\bf Question 3} \\
+By contrapositive, if $n \ne$ even then, $5n+4 \ne even$ \\
+$\Rrightarrow n = odd \rightarrow 5n+4 = odd$ \\
+if $n$ is some odd integer $2k+1$ where $k \epsilon \mathbb{N}$\\
+$\Rrightarrow 5(2k+1) + 4 = 10k +9 = 2(2k+4) + 1$ \\
+$\Rrightarrow 2k+4$ is an integer plus 1 means it is odd. \\
+$\Rrightarrow n = odd \rightarrow 5n+4 = odd$ \\
+    
+
+
+% #4
+\item {\bf Question 4} \\
+Lets assume that there are less than 5 meetings in one month. \\
+That means that the max amount of meetings there could be in one month is 4. \\
+Since $4* 12 = 48$ and there are 50 meetings this is a contradiction. \\
+Therefore there has to be at least one month where there are 5 meetings. \\ 
+% #5
+\item {\bf{Question 5}} \\
+case 1: $m > 0$ and $n > 0$ then $m * n = mn > 0$ \\
+case 2: $m > 0$ and $n < 0$ then $m * n = mn < 0$ \\
+case 3: $m < 0$ and $n > 0$ then $m * n = mn < 0$ \\
+case 4: $m < 0$ and $n < 0$ then $m * n = mn > 0$ \\
+
+% #6 
+\item {\bf{Question 6}} \\
+Suppose $\sqrt[3]{2}$ is rational. \\
+Then there exists $p/q = \sqrt[3]{2}$ \\
+$\Rrightarrow p^3/q^3 = 2 \Rrightarrow 2p^3 = q^3 \Rrightarrow p^3/2 = q^3$ \\
+If $p^3$ can be divided by 2 then it has a factor of 2. \\
+Let there be a $k$ where $k \epsilon \mathbb{N}$ and $p = 2k$ \\
+$\Rrightarrow 2q^3 = (2k)^3 \Rrightarrow 2q^3 = 8k^3 \Rrightarrow q^3 = 4k^3$ \\
+So $q^3$ has a factor of 2 which is a common factor of  $p^3$ \\
+Contradiction: p and q cannot have common factors and be rational so, \\
+Therefore $\sqrt[3]{2}$  is irrational.\\
+% #7 
+\item {\bf{Question 7}} \\
+1.  $\sqrt{82} = 9.05$ \\
+2.  $\sqrt{83} = 9.11$ \\
+3.  $\sqrt{84} = 9.16$ \\
+4.  $\sqrt{85} = 9.21$ \\
+5.  $\sqrt{86} = 9.27$ \\
+6.  $\sqrt{87} = 9.32$ \\
+7.  $\sqrt{88} = 9.38$ \\
+8.  $\sqrt{89} = 9.43$ \\
+9.  $\sqrt{90} = 9.48$ \\
+10. $\sqrt{91} = 9.53$ \\
+11. $\sqrt{92} = 9.59$ \\
+12. $\sqrt{93} = 9.64$ \\
+13. $\sqrt{94} = 9.69$ \\
+14. $\sqrt{95} = 9.74$ \\
+15. $\sqrt{96} = 9.79$ \\
+16. $\sqrt{97} = 9.84$ \\
+17. $\sqrt{98} = 9.89$ \\
+18. $\sqrt{89} = 9.94$ \\
+My proof is constructive because I gave a concrete example instead of assuming. \\
+% #8 
+\item {\bf{Question 8}} \\
+a) $A = [4+6n | n \epsilon \mathbb{N}]$ \\
+b) $A = [n^2 -1 | n \epsilon \mathbb{N}]$ \\
+% #9
+\item {\bf{Question 9}} \\
+For any $A = {x,y,z}, B = {a,b,c}, C = {d,e,f}$ \\
+$(A x B) x C = {((x,a)d) ...}, A x (B x C) = { (x, (a,d)) ... }$ \\
+$ ((x,a),d) \ne (x, (a,d))$ \\
+Therefore $(A x B) x C \ne A x (B x C)$
+
+\end{enumerate}
+\end{document}

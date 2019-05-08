@@ -1,0 +1,12 @@
+\documentclass[11pt]{article}
+
+\begin{document}
+\part{Homework 1:}
+1.
+	a) It is not sunny and it is not snowing
+	b) If it is not sunny and it is snowing, the 		John will go skiing.
+	c) It is sunny and not snowing or it is snowing 	and John goes skiing.  
+2.
+	a) p = "Passing the final", q = "attending 		    class regularly", r = "is sufficient to pass 		the class" 
+	in logical operations: $(p V q) -> r$
+\end{document}

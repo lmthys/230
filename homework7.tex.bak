@@ -1,0 +1,119 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 7 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+a) 
+	Base Case: f(1) = $1/(1*2) = 1/2 = 1/(1+1)$ so the base case holds. \\
+	IH: Assume f(k) = $1/(1*2) + 1/(2*3) + ... + 1/k(k+1) = k/(k+1)$ \\
+	Prove f(k+1) = the sum of $1/(1*2) + 1/(2*3) + ... + 1/k(k+1) + 1/k(k+2)$\\
+	 since we assumed the sum of the first part is f(k) then we know \\
+	 f(k+1) = $f(k) + 1/k(k+2) = k/(k+1) + 1/k(k+2)$ \\
+	 $ = k*k(k+2)/k(k+2)(k+1) + (k+1)/k(k+2)(k+1)  = k^3+3k^2+k+1/k(k+2)(k+1)$ \\
+	 $ =  (k+1)/(k+2) $ \\
+	 So f(k+1) holds so therefor it holds for all positive integers n. 
+	
+	
+	
+
+b) \\
+   Base Case: f(1) = $2-2*7^1 = 2-14 = -12 = (1-(-7^2))/4 = -12$ So the base case holds. \\
+   IH: Assume f(k) = the sum of $2-2*7 + 2*7^2 - ... + 2(-7)^k = (1-(-7)^(k+1))/4$ \\
+   Prove: f(k+1) = the sum - $2(-7)^{k+1}$ \\
+   so f(k) - $2(-7)^{k+1} = (1-(-7)^{k+1})/4 - 2(-7)^{k+1}$ \\
+   $ = (1-(-7)^(k+1))/4 - 4(2*7^(k+1))/4 = (1-(-7)^(k+1) - 8*7^(k+1))/4$ \\ $ = (1-(-7)^(k+2))/4) $ \\
+   So f(k+1) holds for all non-negative numbers k. \\
+   
+   
+c) \\
+	Base Case: f(1) = $1*2*3 = 6 = 1(1+1)(1+2)(1+3)/4 = 1*2*3*4/4 = 24/6 = 6 $ \\
+	So the base case holds.
+	IH: Assume that f(k) = the sum of $1*2*3 + 2*3*4 + ... + k(k+1)(k+2) = k(k+1)(k+2)(k+3)/4$ \\
+	Prove for f(k+1) = the sum + $(k+1)(k+2)(k+3)$ so \\
+	$ = f(k) + (k+1)(k+2)(k+3) = k(k+1)(k+2)(k+3)/4 + (k+1)(k+2)(k+3) $ \\
+	$ k(k+1)(k+2)(k+3) + 4(k+1)(k+2)(k+3) / 4 = k^4 + 10k^3 + 35k^2 + 50k + 6 = (k+1)(k+2)(k+3)(k+4)/4 $\\
+	So f(k+1) holds for all positive integers. \\
+	
+	
+d) \\
+	base Case: f(1) = $1^3 + 2(1) / 3 = 1+2/3 = 1$ which is an int so the base case holds \\
+    IH: Assume f(k) = $k^3 + 2k /3 $ is an int. 
+    Prove f(k+1) is an int as well. Then we know if f(k) is and int then 
+    f(k) + k+1 would be an int. 
+    then $k^3 + 2k /3 + k+1 = k^3 + 5k + 3/3 = (k+1)^3 + 2(k+1) - 3k^2/3 = (k+1)^3 + 2(k+1)/3 - 3k^2/3 $ \\Since $3k^2/3$ is divisible by three than for f(k+1) holds for all positive ints. \\
+  
+   
+
+% #2
+\item {\bf Question 2} \\
+Base Case: one unit square is 4 and f(1) = 2 + 2(1) = 4 which is an even number so the base case holds \\
+IH: For any number k of square blocks you lie down, the number of sides are even which we can represent as f(k) = 2k+2 = even integers\\
+Prove f(k+1) so if you add one more block then f(k+1) = 2(k+1) + 2 \\
+= 2k+2 +2 or f(k) + 2 and if we are assuming f(k) is even then because of what we know about even integers we know and even int plus 2 is still even. \\
+So f(k+1) holds for all numbers of blocks. 
+
+% #3
+\item {\bf Question 3} \\
+a) \\
+Base Case: when n = 14 then the P(n) = 8c + 3c + 3c = 14c \\
+so the base case holds \\
+IH: Assume for any P(k) where k is greater than or equal to 14 k can be formed by using just 8c and 3c pieces. \\
+To prove P(k+1) then we have two cases \\
+Case 1: Suppose k is formed with at least two 3c piece and one 8 piece used to make up k cents. \\
+Then k+1  we have to substitute 8c with 3 3c pieces . 
+Case 2: Suppose k is formed with at least one 8c piece and two 3c pieces \\
+then k+1 must substitute 8c with 3 3c pieces .\\
+so k+1 holds as long as we have five 3 cent pieces. \\
+b) \\
+Base Cases: \\
+	14c = 8c + 3c + 3c \\
+	15c = 3c + 3c + 3c + 3c + 3c  \\
+	16c = 8c + 8c  \\
+	17c = 8c + 3c + 3c \\
+	18c = 3c + 3c + 3c + 3c + 3c + 3c \\
+	19c = 8c + 8c + 3c \\
+	20c = 8c + 3c + 3c + 3c \\
+	21c = 3c + 3c + 3c + 3c + 3c + 3c + 3c \\
+	let k be greater or equal to 21  \\
+IH:
+	Assume that for all y that 14 less than or equal to y and less than or equal to k. for postage of y cents. \\
+	All postage of y cents can be formed using 8c and 3c pieces. \\
+	Since k greater than or equal to 21 then we have postage for k - 7 is greater than or equal to 14 \\
+	So, to prove k+1 we just add 8c to k - 7 postage \\
+	So k + 1 holds when we have at least 2 8c pieces and 2 3c pieces. \\ 
+
+
+% #4
+\item {\bf Question 4} \\
+Base Case: We know p(n) is true for an infinite amount of n's so we pick P(n) where it holds. \\
+IH: Assume P(k+1) holds for any positive integer k.\\
+Prove: That the function holds for all values less than P(k+1). Since we know that P(k+1) implies P(k) then we know that P(k) holds. Which means that we know P(n) holds for any positive integer. 
+
+
+\end{enumerate}
+\end{document}

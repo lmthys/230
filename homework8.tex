@@ -1,0 +1,110 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 8 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+a) 
+	Base Case: f(1) = 1 because of the def of fib numbers. = $f_{2(1)} = f_2 = 1$ so the base case holds. \\
+	IH: Assume f(k) = $F_1 + F_3 + ... F_{2k-1} = F_{2k}$ \\
+	Prove f(k+1) = the sum of $F_1 + F_3 + ... F_{2k-1} + F_{2k+1} = F_{2k+2}$\\
+	 since we assumed the sum of the first part is f(k) then we know \\
+	 f(k+1) = $f(k) + F_{2k+1} = F_{2k} + F_{2k+1}$ \\
+	 $ = F_{2k+2}$ \\
+	 So f(k+1) holds \\
+	
+
+% #2
+\item {\bf Question 2} \\
+a) \\ 
+Base Case: $n = 0 = f_0^2 = 0 = f_0 * f_1 = 0 *1 = 0$ so the base case holds \\
+b) \\
+IH: assume f(k) = $ f_0^2 + f_1^2 + ... + f_k^2 = f_k * f_{k+1} $ \\
+Prove: f(k+1) = $ f_0^2 + f_1^2 + ... + f_k^2 + f_{k+1}^2 = f_{k+1} * f_{k+2}$ \\
+so f(k+1) = $f(k) + f_{k+1}^2 = f_k * f_{k+1} + f_{k+1}^2 = f_{k+1}(f_k + f_{k+1}) = f_{k+1} * f_{k+2}$ \\
+So f(k+1) holds.\\ 
+
+% #3
+\item {\bf Question 3} \\
+To strength the hyp we need a way to determine every step in the state machine. Not just 0 or not 0, which is what n div by 5 gives up. \\
+So the strengthened hyp is Q(n) \\
+Q(n): for n steps greater or equal to 0 we are at state 0 iff n mod 5 = 0  \\ 
+Base Case: n = 0 which means we have taken 0 steps so we should be at state zero. n mod 5 = 0 \\
+so the base case holds \\
+IH: Assume after k steps the state machine is in k mod 5 state. \\
+To prove (k+1) mod 5  then we have 5 cases \\
+Case 1: k mod 5 = 0 $\rightarrow state = 0 \rightarrow k + 1 = 1$ which holds \\
+Case 2: k mod 5 = 1 $\rightarrow state = 1 \rightarrow k + 1 = 2$ which holds \\
+Case 3: k mod 5 = 2 $\rightarrow state = 2 \rightarrow k + 1 = 3$ which holds \\
+Case 4: k mod 5 = 3 $\rightarrow state = 3 \rightarrow k + 1 = 4$ which holds \\
+Case 5: k mod 5 = 4 $\rightarrow state = 4 \rightarrow k + 1 = 0$ which holds \\
+so k+1 holds. \\
+
+
+% #4
+\item {\bf Question 4} \\
+Base Case: \\
+	P(1) = 1 stack + 0 stack  = 1 * 0 = 0 = 1(1-1)/2 = 0 so it holds \\
+	P(2) = 1 stack + 1 stack  = 1 * 1 = 1 = 2(2-1)/2 = 1 so it holds \\
+	P(3) = 2 stack + 1 stack = 2 * 1 = 2 then break it down again because it is not in stacks of 1, so 1 stack + 1 stack  = 1 * 1 = 1 + 2 = 3 = 3(3-1)/2 = 3 so it holds\\ 
+	P(4) = 2 stack + 2 stack = 2 * 2 = 4 then break it down again because it is not in stacks of 1, so 1 stack + 1 stack and 1 stack + 1 stack = 1*1 + 1*1 = 2 + 4 = 6 = 4(4-1)/2 = 6 so it holds\\ 
+	P(5) = 2 stack + 3 stack = 2 * 3 = 6 then break it down again because it is not in stacks of 1, so 1 stack + 1 stack and 2 stack + 1 stack = 1 * 1 + 2 * 1 = 1 + 2 = 3 + 6 = 9 then because there is still a 2 stack break it down again, 1 stack + 1 stack = 1 * 1 = 1 + 9 = 10 = 5(5-1)/2 = 10 so it holds\\ 
+IH: By simplification of strong induction we assume because P(1) $ \land P(2) \land P(3) \land P(4) \land P(5) ... \rightarrow P(k)$ .\\
+Prove: Since we have P(1) $ \land P(2) \land P(3) \land P(4) \land P(5) ... \land P(k)$ this implies P(k+1) so it holds. \\
+
+% #5
+\item {\bf Question 5} \\
+The start state is (0,0) and the state can be represented as (x,y)\\
+where the transitions are $\{(x,y) | x,y \in \mathbb{Z}, (x + y) mod 2 = 0\}$ \\
+Preserved Invariant: $div2sum(x,y) = [(x+y) mod 2 = 0]$ \\
+Base Case: P(0) = (0,0), 0 + 0 = 0 mod 2 = 0, so the base case holds \\
+Ind: Assume P(k) holds then let there be a state r that we get to in k + 1 transitions. \\
+Prove: for P(k) = k $\rightarrow$ r  \\
+Case 1 : k + ((1 +3 = 4) = k + 4 \\
+since k mod 2 = 0 and 4 mod 2 = 0 it follows that k + 4 mod 2 = 0 this case holds\\
+Case 2 : k + ((-1+1 = 0) = k + 0 \\
+since k mod 2 = 0 this case holds \\  
+Case 3 : k + ((0 -4 = -4) = k - 4 \\
+since k mod 2 = 0 and -4 mod 2 = 0 it follows that k - 4 mod 2 = 0 so this case holds\\
+So because we proved that the robot only moves to a state where div2sum(x,y) holds then the robot cannot go to (2,-1) because 2 -1 = 1 \\
+And 1 mod 2 is not 0 \\
+
+% #6
+\item {\bf Question 6} \\
+Assume $ P(1) \land P(2) \land ... \land P(k) \rightarrow P(k+1) $ \\
+Prove: P(k) $\rightarrow$ P(k+1) \\
+New IH: Q(n) = $P(1) \land .. \land P(n)$ \\
+Base Case: Q(1) = P(1) it holds because of strong induction. \\
+Ind: assume Q(k) is true \\
+therefor P(k+1) is true by SI hyp. \\
+$P(1) \land ... \land P(k) \land P(k+1) =$ True so Q(k+1) is true \\
+Q(n) = true for all n in $\mathbb{Z}+$ \\
+P(n) = true for all n in $\mathbb{Z}+$ \\
+
+
+\end{enumerate}
+\end{document}

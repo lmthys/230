@@ -1,0 +1,137 @@
+% some document settings
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\setlength{\parskip}{7pt plus 2pt minus 2pt}
+
+% include some needed libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\let\biconditional\leftrightarrow
+
+\begin{document}
+% begin editing
+
+% title part
+\title{
+\textbf{COMS 230: Discrete Computational Structures}\\
+Homework \# 1 \\}
+\author{Larisa Andrews}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+
+% #1
+\item {\bf Question 1} \\
+	a) It is not sunny and it is not snowing \\
+	b) If it is not sunny and it is snowing, the 		John will go skiing. \\
+	c) It is sunny and not snowing or it is snowing 	and John goes skiing. \\ 
+
+% #2
+\item {\bf Question 2} \\
+a) 
+   $p$ = "Passing the final",
+   $q$ = "attending class regularly",
+   $r$ = "to pass the class" \\
+   in logical operations: $(p \lor q) \rightarrow r$ \\
+b) 
+   $p$ = "to pass the class",
+   $q$ = "to attend class regularly" \\
+   in logical operations: $ p \rightarrow q $ \\
+c)
+   $p$ = "you will pass the class",
+   $q$ = "you attend class regularly",
+   $r$ = "you pass the final" \\
+   in logical operations: $ p \biconditional (q \wedge r) $
+
+
+% #3
+\item {\bf Question 3} \\
+First, $a$ = Alice, $b$ = Bob, $c$ = Cindy, $d$ = Don, and $e$ = Ellen. Also, $vg$ = video games and $bb$ = basketball.
+
+Lets assume $b$ plays $vg$. If $b$ plays $vg$ then so do $a$ and $e$ according to sentence 5. If $a$ plays $vg$ then so does $d$ according to sentence 4. If $e$ plays $vg$ then so does $c$ according to sentence 3. But according to sentence 2 $c$ and $d$ cannot play the same thing. So therefore $b$ does not play $vg$. 
+
+So $b$ plays $bb$. So then $a$ plays $vg$ according to sentence 1. According to sentence 4 $d$ will play $vg$ as well. Then according to sentence 2 $c$ plays $bb$. Then due to the contrapositive of sentence 3 $e$ will play $bb$. 
+
+
+% #4
+\item {\bf Question 4} Demonstration of truth table
+
+
+Demonstration of truth table $(\lnot p \land (p \rightarrow q)) \rightarrow \lnot q)$\\
+
+\begin{tabular}{c|c|ccccc}
+$p$ & $q$ & $(\lnot p $ & $\land$ & $(p \rightarrow q))$ & $\rightarrow$ & $\lnot q$\\ \hline
+T & T & F & F & T & \textbf{T} & F\\
+T & F & F & F & F & \textbf{T} & T\\
+F & T & T & T & T & \textbf{F} & F\\
+F & F & T & T & T & \textbf{T} & T\\
+\end{tabular}\\\\
+Because the boldface row is not always true the logical statement \\
+$(\lnot p \land (p \rightarrow q)) \rightarrow \lnot q)$ is not a tautology. 
+% #5 
+\item {\bf{Question 5}}
+
+\begin{tabular}{c|c|c|ccc}
+$p$ & $q$ & $r$ & $(p $ & $\rightarrow$ & $(q \rightarrow r))$\\ \hline
+T & T & T & T & \textbf{T} & T\\
+T & T & F & T & \textbf{F} & F\\
+T & F & T & T & \textbf{T} & T\\
+T & F & F & T & \textbf{T} & T\\
+F & T & T & F & \textbf{T} & T\\
+F & T & F & F & \textbf{T} & F\\
+F & F & T & F & \textbf{T} & T\\
+F & F & F & F & \textbf{T} & T\\
+\end{tabular}\\\\
+
+% #6
+\item {\bf{Question 6}}
+
+a) Truth table for \\
+\begin{tabular}{c|c|c|ccc|ccc}
+$p$ & $q$ & $r$ & $(p \rightarrow r)$ & $\land$ & $(q \rightarrow r)$ & $(p \lor q)$ & $\rightarrow$ & $r$\\ \hline
+T & T & T & T & T & T & T & T & T\\
+T & T & F & F & F & F & T & F & F\\
+T & F & T & T & T & T & T & T & T\\
+T & F & F & F & F & T & T & F & F\\
+F & T & T & T & T & T & T & T & T\\
+F & T & F & T & F & F & T & F & F\\
+F & F & T & T & T & T & F & T & T\\
+F & F & F & T & T & T & F & T & F\\
+\end{tabular}\\\\
+b)
+\begin{align}
+\textrm{Left column} && \textrm{Right column} \\
+     (p \rightarrow r) \land (q \rightarrow r) = (\lnot p \lor r) \land (\lnot q \lor r)  && \textrm{Table 7.1} \\
+  	  = (\lnot p \lor \lnot q) \lor (r \lor r) && \textrm{Comm. and Assoc.} \\
+      = (\lnot p \lor \lnot q) \lor r && \textrm{idempotent} \\
+      = \lnot (p \land q) \lor r && \textrm{de Morgans} \\
+      = p \land q \rightarrow r &&  \textrm{Table 7.1} 
+\end{align}
+
+
+% #7 
+\item {\bf{Question 7}}
+
+
+\begin{tabular}{c|c|ccc|cccc}
+$p$ & $q$ & $p $ & $NOR$ & $q$ & $\lnot$ & $(p$ & $ \lor $ & $q)$\\ \hline
+T & T & T & F & T & F & T & T & T\\
+T & F & T & F & F & F & T & T & F\\
+F & T & F & F & T & F & F & T & T\\
+F & F & F & T & F & T & F & F & F\\
+\end{tabular}\\\\
+To prove NOR is functionally complete we must show how NOR can create a not, or, and and gate.\\
+$p NOR q = \lnot (p \lor q)$  as proven by the above truth table\\
+$\lnot p = p NOR p = \lnot (p \lor p)$ (1)  by idempotent\\
+$ p \lor q = \lnot ( \lnot (p \lor q)) = (1) (p NOR q)$ (2) by double negation\\
+$ p \land q = \lnot (\lnot p \lor \lnot q) = (1)( (1) p (2) (1) q )$ by de Morgans \\
+
+
+\end{enumerate}
+\end{document}
